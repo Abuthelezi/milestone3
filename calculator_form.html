@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Empowering the Nation – Calculator</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      font-size: 20px;
+      line-height: 1.7;
+      background-color: #fff;
+      color: #000;
+    }
+
+    .corner-icon {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 10;
+    }
+
+    .corner-icon img {
+      width: 300px;
+      height: auto;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      background-color: transparent;
+      padding: 0;
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .nav-bar {
+      background-color: black;
+      border-radius: 40px;
+      padding: 10px 30px;
+      display: flex;
+      gap: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-bar a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+    }
+
+    .nav-search {
+      position: absolute;
+      right: 40px;
+    }
+
+    .nav-search input {
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    .calculator-section {
+      padding: 80px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .calculator-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .form-block {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      width: 100%;
+      gap: 20px;
+    }
+
+    .heading-block {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .heading-block span {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    .underline {
+      width: 160px;
+      height: 4px;
+      background-color: black;
+      margin-top: 8px;
+    }
+
+    .form-title {
+      font-weight: bold;
+      font-size: 1.6rem;
+      margin-top: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+    }
+
+    .form-group label {
+      font-weight: 500;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="number"] {
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      width: 100%;
+    }
+
+    .checkbox-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .checkbox-grid label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .checkbox-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.price-tag {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 4px;
+  color: #333;
+}
+
+
+
+    .calculate-button {
+      padding: 12px 24px;
+      background-color: black;
+      color: white;
+      font-size: 1rem;
+      font-weight: 500;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .calculate-button:hover {
+      background-color: #333;
+    }
+
+    .quote-button {
+      padding: 12px 24px;
+      background-color: #007BFF;
+      color: white;
+      font-size: 1rem;
+      font-weight: 500;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .quote-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="corner-icon">
+    <img src="img/logoBlack.png" alt="Black Logo" />
+  </div>
+
+  <nav>
+    <div class="nav-wrapper">
+      <div class="nav-bar">
+        <a href="index.html">Home</a>
+        <a href="six_months.html">6 Months</a>
+        <a href="six_weeks.html">6 Weeks</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-search">
+        <input type="text" placeholder="Search..." />
+      </div>
+    </div>
+  </nav>
+
+  <section id="calculator" class="calculator-section">
+    <div class="calculator-row">
+      <!-- Column 1: Details -->
+      <div class="column">
+        <div class="form-block">
+          <div class="heading-block">
+            <span>1</span>
+            <div class="underline"></div>
+          </div>
+
+          <div class="form-title">Details</div>
+
+       <div class="form-group">
+  <label for="phone">Phone Number</label>
+  <input type="text" id="phone" />
+</div>
+
+<div class="form-group">
+  <label for="email">Email Address</label>
+  <input type="email" id="email" />
+</div>
+
+<p>You can select more than one course:</p>
+
+<div class="form-title">Six Month Course</div>
+<div class="form-group checkbox-grid">
+  <div class="checkbox-item">
+    <label><input type="checkbox" name="sixMonth" value="Course A" /> FIRST AID</label>
+    <div class="price-tag">R1500</div>
+  </div>
+  <div class="checkbox-item">
+    <label><input type="checkbox" name="sixMonth" value="Course B" />SEWING</label>
+    <div class="price-tag">R1500</div>
+  </div>
+  <div class="checkbox-item">
+    <label><input type="checkbox" name="sixMonth" value="Course C" />LANDSCAPING</label>
+    <div class="price-tag">R1500</div>
+  </div>
+  <div class="checkbox-item">
+    <label><input type="checkbox" name="sixMonth" value="Course D" />LIFE SKILLS</label>
+    <div class="price-tag">R1500</div>
+  </div>
+</div>
+
+<div class="form-title">Six Weeks Course</div>
+<div class="form-group checkbox-grid">
+  <div class="checkbox-item">
+    <label><input type="checkbox" name="sixWeek" value="Course E" />CHILD MINIDNG</label>
+    <div class="price-tag">R750</div>
+  </div>
+  <div class="checkbox-item">
+    <label><input type="checkbox" name="sixWeek" value="Course F" />COOKING</label>
+    <div class="price-tag">R750</div>
+  </div>
+  <div class="checkbox-item">
+    <label><input type="checkbox" name="sixWeek" value="Course G" />GARDEN MAINTENANCE</label>
+    <div class="price-tag">R750</div>
+  </div>
+ 
+</div>
+
+ </div>
+ </div>
+
+
+      <!-- Column 2: Quote Calculation -->
+      <div class="column">
+        <div class="form-block">
+          <div class="heading-block">
+            <span>2</span>
+            <div class="underline"></div>
+          </div>
+
+          <div class="form-title">Calculation of Quote</div>
+
+          <div class="form-group">
+            <label for="subtotal">Sub Total</label>
+            <input type="number" id="subtotal" />
+          </div>
+
+          <div class="form-group">
+            <label for="discount">Discount</label>
+            <input type="number" id="discount" />
+          </div>
+
+          <div class="form-group">
+            <label for="vat">VAT (15%)</label>
+            <input type="number" id="vat" />
+          </div>
+
+          <div class="form-group">
+            <label for="totalQuote">Total Quote</label>
+            <input type="number" id="totalQuote" />
+          </div>
+
+          <button class="calculate-button">Apply</button>
+          <button class="quote-button">Get a Quote</button>
+        </div>
+      </div>
+
+      <!-- Column 3: -->
+       <div class="column">
+  <div class="form-block">
+    <div class="heading-block">
+      <span>3</span>
+      <div class="underline"></div>
+    </div>
+
+    <div class="form-title">Contact Form</div>
+
+    <div class="form-group">
+      <label for="contactName">Name</label>
+      <input type="text" id="contactName" />
+    </div>
+
+    <div class="form-group">
+      <label for="contactEmail">Email Address</label>
+      <input type="email" id="contactEmail" />
+    </div>
+
+    <div class="form-group">
+      <label for="venue">Select a Venue</label>
+      <select id="venue">
+        <option value="">-- Choose a venue --</option>
+        <option value="sharpville">Sharpville</option>
+        <option value="soweto">Soweto</option>
+        <option value="alexandra">Alexandra</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea id="message" rows="5"></textarea>
+    </div>
+
+    <button class="calculate-button">Submit</button>
+  </div>
+</div>
+ </div> <!-- End of .calculator-row -->
+  </section>
+</body>
+</html>
+
+
+
+
+

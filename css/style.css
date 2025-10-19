@@ -1,6 +1,19 @@
-/* Header background */
+/* ========== GLOBAL STYLES ========== */
+body {
+  background-color: rgba(0, 0, 0, 0.349);
+  background-image: none;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.212);
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+/* ========== HEADER & OVERLAY ========== */
 header {
-  
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -11,9 +24,8 @@ header {
   align-items: center;
 }
 
-/* Full-screen overlay */
 .overlay {
-  background-color: rgba(0, 0, 0, 0.5); /* adjust darkness here */
+  background-color: rgba(0, 0, 0, 0.5);
   position: absolute;
   top: 0;
   left: 0;
@@ -22,7 +34,6 @@ header {
   z-index: 0;
 }
 
-/* Text sits above overlay */
 .hero-text {
   max-width: 600px;
   text-align: center;
@@ -30,14 +41,13 @@ header {
   padding: 20px;
   position: relative;
   z-index: 1;
-   margin-top: -500px;
-
+  margin-top: -500px;
 }
 
-/* Navigation stays at top and centered */
+/* ========== NAVIGATION ========== */
 nav {
   top: 0;
-  background-color: rgba(0, 0, 0, 0.6); /* optional: semi-transparent nav */
+  background-color: rgba(0, 0, 0, 0.6);
   position: sticky;
   top: 0;
   z-index: 2;
@@ -50,26 +60,13 @@ nav a {
   color: white;
 }
 
-body {
-  background-color: rgba(0, 0, 0, 0.349);
-  background-image: none;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  margin: 0;
-  padding: 0;
-  color: rgba(255, 255, 255, 0.212);
-  font-size: 20px; /* default is usually 16px */
-  line-height: 1.7;
-
-
-}
-.heading-line {
-  width: 40%; /* adjust to match the heading width visually */
-  height: 2px;
-  background-color: rgba(255, 255, 255, 0.144);
-  margin: 10px auto 20px auto; /* spacing above and below */
-  opacity: 0.5; /* optional: softens the line */
+.nav-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
 }
 
 .nav-bar {
@@ -78,47 +75,22 @@ body {
   padding: 10px 30px;
   display: flex;
   gap: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* optional soft shadow */
-position: relative;
-  z-index: 1;
-
-
-}
-.nav-wrapper {
-  display: flex;
-  justify-content:center;
-  align-items: center;
-  width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   position: relative;
-  margin: 0 auto;
-  
+  z-index: 1;
 }
-
 
 .nav-bar a {
   text-decoration: none;
   color: black;
   font-weight: 500;
 }
+
 .nav-bar span {
   color: black;
   font-size: 1.2rem;
 }
 
-button {
-  background-color: white;
-  color: black;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 8px; /* this creates the rounded corners */
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #f0f0f0; /* subtle hover effect */
-}
 .nav-links {
   display: flex;
   gap: 20px;
@@ -129,12 +101,11 @@ button:hover {
   color: black;
   font-weight: 500;
 }
+
 .nav-search {
   position: absolute;
   right: 40px;
 }
-
-
 
 .nav-search input {
   padding: 8px 16px;
@@ -144,6 +115,23 @@ button:hover {
   outline: none;
 }
 
+/* ========== BUTTONS ========== */
+button {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #f0f0f0;
+}
+
+/* ========== LOGO ========== */
 .corner-icon {
   position: absolute;
   top: 20px;
@@ -152,14 +140,16 @@ button:hover {
 }
 
 .corner-icon img {
-  width: 300px; /* increase from 40px */
+  width: 300px;
   height: auto;
 }
+
 
 corner-icon img {
   width: 150px;
 }
 
+/* ========== SECTION WRAPPER ========== */
 .section-wrapper {
   text-align: center;
   padding-top: 60px;
@@ -174,6 +164,7 @@ corner-icon img {
   margin: 10px auto 30px auto;
 }
 
+
 .tile-grid {
   display: flex;
   justify-content: center;
@@ -183,27 +174,34 @@ corner-icon img {
   margin-top: 40px;
 }
 
+/* ========== COURSE TILE STYLING ========== */
 .course-tile {
   flex: 1 1 30%;
   max-width: 400px;
   background-color: rgba(255, 255, 255, 0.247);
   border-radius: 20px;
-   min-height: 420px;
-display: flex;
-flex-direction: column;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
   padding: 30px;
   color: white;
   justify-content: space-between;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
-
-
-
 .course-tile h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 20px;
+  line-height: 1.2;
+  text-align: center;
+  white-space: normal;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+.smaller-heading {
+  font-size: 1.8rem;
+  line-height: 1.2;
 }
 
 .tile-line {
@@ -233,20 +231,42 @@ flex-direction: column;
 .arrow {
   font-size: 1.8rem;
 }
-.smaller-heading {
-  font-size: 1.8rem; /* slightly smaller than default 2rem */
-  line-height: 1.2;
+
+
+.scroll-container {
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  margin-top: 40px;
+  scroll-behavior: smooth;
 }
 
-.course-tile h2 {
-  font-size: 2rem;
-  font-weight: bold;
-  line-height: 1.2;
-  text-align: center;
-  white-space: normal;
-  word-break: break-word;
-  hyphens: auto;
+
+.scroll-container .tile-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 40px;
+  padding: 0 40px;
+  min-width: max-content;
 }
+
+
+.scroll-container .course-tile {
+  flex: 0 0 auto;
+  width: 300px;
+  min-height: 420px;
+}
+
+
+.scroll-container {
+  scroll-snap-type: x mandatory;
+}
+
+.scroll-container .course-tile {
+  scroll-snap-align: start;
+}
+
+
+
 
 
 

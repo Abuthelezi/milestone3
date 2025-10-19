@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Empowering the Nation – Programs</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      font-size: 20px;
+      line-height: 1.7;
+      background-color: #fff;
+      color: #000;
+    }
+
+    .corner-icon {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 10;
+    }
+
+    .corner-icon img {
+      width: 300px;
+      height: auto;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      background-color: transparent;
+      padding: 0;
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .nav-bar {
+      background-color: black;
+      border-radius: 40px;
+      padding: 10px 30px;
+      display: flex;
+      gap: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-bar a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+    }
+
+    .nav-search {
+      position: absolute;
+      right: 40px;
+    }
+
+    .nav-search input {
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    .program-section {
+      padding: 80px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .program-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      align-items: start;
+    }
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .program-block {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .program-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .heading-block {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .heading-block span {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    .underline {
+      width: 160px;
+      height: 4px;
+      background-color: black;
+      margin-top: 8px;
+    }
+
+    .program-title {
+      font-weight: bold;
+      font-size: 1.6rem;
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+
+    .bullet-list {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin:0;
+  min-height: 160px; /* Adjust as needed */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+
+
+    .program-tile {
+      position: relative;
+      height: 300px;
+      width: 100%;
+      border-radius: 12px;
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .tile-overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+
+    .apply-button {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: white;
+      color: black;
+      font-size: 1rem;
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: 6px;
+      margin: 0 auto;
+    }
+
+    .price-tag {
+      position: absolute;
+      bottom: 12px;
+      right: 20px;
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="corner-icon">
+    <img src="img/logoBlack.png" alt="Black Logo" />
+  </div>
+
+  <nav>
+    <div class="nav-wrapper">
+      <div class="nav-bar">
+        <a href="index.html">Home</a>
+        <a href="six_months.html">6 Months</a>
+        <a href="six_weeks.html">6 Weeks</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-search">
+        <input type="text" placeholder="Search..." />
+      </div>
+    </div>
+  </nav>
+
+  <section id="programs" class="program-section">
+    <div class="program-row">
+      <!-- Column 1 -->
+      <div class="column">
+        <div class="program-block">
+          <div class="heading-block">
+            <span>1</span>
+            <div class="underline"></div>
+          </div>
+          <div class="program-content">
+            <div class="program-title">CHILD MINDING</div>
+            <ul class="bullet-list">
+              <li>Birth to six-month old baby needs</li>
+              <li>Seven-month to one year old needs</li>
+              <li>Toddler needs</li>
+              <li>Education toys</li>
+            </ul>
+          </div>
+          <div class="program-tile" style="background-image: url('img/child-minding.jpg');">
+            <div class="tile-overlay">
+              <a href="#apply-child" class="apply-button">Apply</a>
+              <div class="price-tag">R500</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="column">
+        <div class="program-block">
+          <div class="heading-block">
+            <span>2</span>
+            <div class="underline"></div>
+          </div>
+          <div class="program-content">
+            <div class="program-title">COOKING</div>
+            <ul class="bullet-list">
+              <li>Nutritional requirement for a healthy body</li>
+              <li>Types of protein, carbohydrates and vegetables</li>
+              <li>Planning meals</li>
+              <li>Tasty and nutritious recipes</li>
+              <li>Preparation and cooking of meals</li>
+            </ul>
+          </div>
+          <div class="program-tile" style="background-image: url('img/youth-mentorship.jpg');">
+            <div class="tile-overlay">
+              <a href="#apply-youth" class="apply-button">Apply</a>
+              <div class="price-tag">R750</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="column">
+        <div class="program-block">
+          <div class="heading-block">
+            <span>3</span>
+            <div class="underline"></div>
+          </div>
+          <div class="program-content">
+            <div class="program-title">GARDEN MAINTENANCE</div>
+            <ul class="bullet-list">
+              <li>Water restrictions and watering requirements of indigenous exotic plants</li>
+              <li>Pruning and propagation of plants</li>
+              <li>Planting techniques for different plant types</li>
+            </ul>
+          </div>
+          <div class="program-tile" style="background-image: url('img/skills-development.jpg');">
+            <div class="tile-overlay">
+              <a href="#apply-skills" class="apply-button">Apply</a>
+              <div class="price-tag">R900</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
+
