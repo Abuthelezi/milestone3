@@ -4,15 +4,255 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Empowering the Nation</title>
-  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* ========== GLOBAL RESET ========== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ccc;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    h1, h2 {
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .heading-main {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .heading-sub {
+      font-size: 2rem;
+    }
+
+    /* ========== NAVIGATION ========== */
+    nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      width: 100%;
+      background-color: transparent;
+      padding: 10px 0;
+       box-shadow: none;
+       
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .corner-icon {
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      transform: translateY(-50%);
+      z-index: 10;
+    }
+
+    .corner-icon img {
+      width: 150px;
+      height: auto;
+      display: block;
+    }
+
+    .nav-bar {
+      background-color: white;
+      border-radius: 40px;
+      padding: 10px 30px;
+      display: flex;
+      gap: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      z-index: 2;
+    }
+
+    .nav-bar a {
+      text-decoration: none;
+      color: black;
+      font-weight: 500;
+      font-size: 1rem;
+    }
+
+    .nav-search {
+      position: absolute;
+      right: 40px;
+    }
+
+    .nav-search input {
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    /* ========== HEADER BACKGROUND ========== */
+    .header-background {
+      background-image: url('img/watergardenweb.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 0;
+    }
+
+    .section-wrapper {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: white;
+      padding: 40px 20px;
+    }
+
+    .heading-line {
+      width: 100px;
+      height: 3px;
+      background-color: white;
+      opacity: 0.8;
+      margin: 10px auto 30px auto;
+    }
+
+    /* ========== COURSE TILE SECTION ========== */
+    .scroll-container {
+      background-color: white;
+      padding: 40px 0;
+      overflow-x: auto;
+    }
+
+    .tile-grid {
+      display: flex;
+      gap: 40px;
+      flex-wrap: nowrap;
+      justify-content: center;
+      padding: 0 40px;
+      min-width: max-content;
+      flex-wrap: wrap;
+    }
+
+    .course-tile {
+      flex: 0 0 auto;
+      width: 300px;
+      min-height: 420px;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      padding: 30px;
+      color: white;
+      justify-content: space-between;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .course-tile::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+
+    .course-tile h2,
+    .course-tile .tile-line,
+    .course-tile .tile-description,
+    .course-tile .tile-footer {
+      position: relative;
+      z-index: 1;
+    }
+
+    .tile-line {
+      width: 80px;
+      height: 3px;
+      background-color: white;
+      opacity: 0.6;
+      margin: 10px auto 25px auto;
+    }
+
+    .tile-description {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 35px;
+    }
+
+    .tile-footer {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .arrow {
+      font-size: 1.6rem;
+    }
+
+    /* ========== TILE BACKGROUND IMAGES ========== */
+    .course-tile.first-aid {
+      background-image: url('img/firstaid.png');
+    }
+
+    .course-tile.sewing {
+      background-image: url('img/sewing.png');
+    }
+
+    .course-tile.landscaping {
+      background-image: url('img/landscaping.png');
+    }
+
+    .course-tile.life-skills {
+      background-image: url('img/lifeskills.png');
+    }
+    .intro-image {
+  text-align: center;
+  margin: 40px auto;
+}
+
+.intro-image img {
+  max-width: 90%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+  </style>
 </head>
 <body>
-  <div class="corner-icon">
-    <img src="img/logo_white.png" alt="Site Icon" />
-  </div>
-
   <nav>
     <div class="nav-wrapper">
+      <div class="corner-icon">
+        <img src="img/logo_white.png" alt="Site Icon" />
+      </div>
       <div class="nav-bar">
         <a href="index.html">Home</a>
         <a href="six_months.html">6 Months</a>
@@ -26,64 +266,67 @@
   </nav>
 
   <header id="home">
-    <div class="overlay"></div>
-
-    <div class="section-wrapper">
-      <h1>Six Months courses</h1>
-      <div class="heading-line"></div>
-      <div class="scroll-container">
-        <div class="tile-grid">
-          <div class="course-tile">
-            <h2>FIRST AID</h2>
-            <div class="tile-line"></div>
-            <p class="tile-description">
-              <strong>Purpose:</strong> To provide first aid awareness and basic life support.
-            </p>
-            <div class="tile-footer">
-              <span>More details</span>
-              <span class="arrow">→</span>
-            </div>
-          </div>
-
-          <div class="course-tile">
-            <h2>SEWING</h2>
-            <div class="tile-line"></div>
-            <p class="tile-description">
-              <strong>Purpose:</strong>To provide alterations and new garment tailoring services.
-            </p>
-            <div class="tile-footer">
-              <span>More details</span>
-              <span class="arrow">→</span>
-            </div>
-          </div>
-
-          <div class="course-tile">
-            <h2 class="smaller-heading">LANDSCAPING</h2>
-            <div class="tile-line"></div>
-            <p class="tile-description">
-              <strong>Purpose:</strong> To provide landscaping services for new and established gardens.
-            </p>
-            <div class="tile-footer">
-              <span>More details</span>
-              <span class="arrow">→</span>
-            </div>
-          </div>
-
-          <div class="course-tile">
-            <h2>LIFE SKILS</h2>
-            <div class="tile-line"></div>
-            <p class="tile-description">
-              <strong>Purpose:</strong> To provide skills to navigate basic necessities.
-            </p>
-            <div class="tile-footer">
-              <span>More details</span>
-              <span class="arrow">→</span>
-            </div>
-          </div>
-        </div>
+    <div class="header-background">
+      <div class="overlay"></div>
+      <div class="section-wrapper">
+        <h1 class="heading-main">Six Months Courses</h1>
+        <div class="heading-line"></div>
       </div>
     </div>
+    <div class="scroll-container">
+      <div class="tile-grid">
+        <div class="course-tile first-aid">
+          <h2 class="heading-sub">FIRST AID</h2>
+          <div class="tile-line"></div>
+          <p class="tile-description">
+            <strong>Purpose:</strong> To provide first aid awareness and basic life support.
+          </p>
+          <div class="tile-footer">
+            <span>More details</span>
+            <span class="arrow">→</span>
+          </div>
+        </div>
+
+        <div class="course-tile sewing">
+          <h2 class="heading-sub">SEWING</h2>
+          <div class="tile-line"></div>
+          <p class="tile-description">
+            <strong>Purpose:</strong> To provide alterations and new garment tailoring services.
+          </p>
+          <div class="tile-footer">
+            <span>More details</span>
+            <span class="arrow">→</span>
+          </div>
+        </div>
+
+        <div class="course-tile landscaping">
+          <h2 class="heading-sub">LANDSCAPING</h2>
+          <div class="tile-line"></div>
+          <p class="tile-description">
+            <strong>Purpose:</strong> To provide landscaping services for new and established gardens.
+          </p>
+          <div class="tile-footer">
+            <span>More details</span>
+            <span class="arrow">→</span>
+          </div>
+        </div>
+
+        <div class="course-tile life-skills">
+          <h2 class="heading-sub">LIFE SKILLS</h2>
+          <div class="tile-line"></div>
+          <p class="tile-description">
+            <strong>Purpose:</strong> To provide skills to navigate basic necessities.
+          </p>
+           <div class="tile-footer">
+            <span>More details</span>
+            <span class="arrow">→</span>
+          </div>
+          </div>
+           </div> <!-- End of life-skills tile -->
+      </div> <!-- End of tile-grid -->
+    </div> <!-- End of scroll-container -->
   </header>
 </body>
 </html>
+
 

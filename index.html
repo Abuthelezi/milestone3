@@ -1,59 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-<link rel="stylesheet" href="css/style.css" />
-
-<style>
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
-
-
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Empowering the Nation</title>
+
+  <style>
+    /* ========== GLOBAL RESET ========== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      background-color: black;
+      color: white;
+      overflow: hidden; /* ✅ Prevent scroll */
+    }
+
+    /* ========== NAVIGATION ========== */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: black;
+      padding: 20px 0;
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .corner-icon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding-left: 20px;
+    }
+
+    .corner-icon img {
+      width: 150px;
+      height: auto;
+    }
+
+    .nav-bar {
+      background-color: white;
+      border-radius: 40px;
+      padding: 10px 30px;
+      display: flex;
+      gap: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      z-index: 2;
+    }
+
+    .nav-bar a {
+      text-decoration: none;
+      color: black;
+      font-weight: 500;
+      font-size: 1rem;
+    }
+
+    .nav-search {
+      position: absolute;
+      right: 40px;
+    }
+
+    .nav-search input {
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    /* ========== HEADER ========== */
+    header {
+      background-image: url('img/bannerWeb.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      height: calc(100vh - 80px); /* ✅ Adjust for nav height */
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 0;
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 40px 20px 20px;
+      max-width: 600px;
+    }
+
+    .hero-text h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .heading-line {
+      width: 100px;
+      height: 3px;
+      background-color: white;
+      opacity: 0.8;
+      margin: 10px auto 30px auto;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    button {
+      background-color: white;
+      color: black;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #f0f0f0;
+    }
+  </style>
 </head>
+
 <body>
-  <div class="corner-icon">
-  <img src="img/logo_white.png" alt="Site Icon" />
-</div>
-
-
-
-<nav>
-  <div class="nav-wrapper">
-    <div class="nav-bar">
-      <a href="index.html">Home</a>
-      <a href="six_months.html">6 Months</a>
-      <a href="six_weeks.html">6 Weeks</a>
-      <a href="contact.html">Contact</a>
+  <nav>
+    <div class="nav-wrapper">
+      <div class="corner-icon">
+        <img src="img/logo_white.png" alt="Site Icon" />
+      </div>
+      <div class="nav-bar">
+        <a href="index.html">Home</a>
+        <a href="six_months.html">6 Months</a>
+        <a href="six_weeks.html">6 Weeks</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-search">
+        <input type="text" placeholder="Search..." />
+      </div>
     </div>
-    <div class="nav-search">
-      <input type="text" placeholder="Search..." />
+  </nav>
+
+  <header id="home">
+    <div class="overlay"></div>
+    <div class="hero-text">
+      <h1>Empowering the Nation</h1>
+      <div class="heading-line"></div>
+      <p>
+        Empowering the Nation was established in 2022 and offers courses in Johannesburg.
+        Hundreds of domestic workers and gardeners have been trained on both the six-months long learnerships
+        and six-weeks short skills Training Programs to empower themselves and provide more marketable skills.
+      </p>
+      <button>Get Started</button>
     </div>
-  </div>
-</nav>
-
-
-
-  <!-- Main Content -->
- <header id="home">
-  <div class="hero-text">
-    <h1>Empowering the Nation</h1>
-    <div class="heading-line"></div>
-
-
-    <p>
-      Empowering the Nation was established in 2022 and offers courses in Johannesburg.
-      Hundreds of domestic workers and gardeners have been trained on both the six-months long learnerships
-      and six-weeks short skills Training Programs to empower themselves and provide more marketable skills.
-    </p>
-    <button>Get Started</button>
-  </div>
-</header>
-
+  </header>
 </body>
 </html>
+

@@ -1,45 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-<link rel="stylesheet" href="css/style.css" />
-
-
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Empowering the Nation</title>
+
+  <style>
+    /* ========== GLOBAL RESET ========== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ccc;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    h1, h2 {
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .heading-main {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .heading-sub {
+      font-size: 2rem;
+    }
+
+    /* ========== NAVIGATION ========== */
+    nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      width: 100%;
+      background-color: transparent;
+      padding: 10px 0;
+      box-shadow: none;
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .corner-icon {
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      transform: translateY(-50%);
+      z-index: 10;
+    }
+
+    .corner-icon img {
+      width: 150px;
+      height: auto;
+      display: block;
+    }
+
+    .nav-bar {
+      background-color: white;
+      border-radius: 40px;
+      padding: 10px 30px;
+      display: flex;
+      gap: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      z-index: 2;
+    }
+
+    .nav-bar a {
+      text-decoration: none;
+      color: black;
+      font-weight: 500;
+      font-size: 1rem;
+    }
+
+    .nav-search {
+      position: absolute;
+      right: 40px;
+    }
+
+    .nav-search input {
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    /* ========== HEADER BACKGROUND ========== */
+    .header-background {
+      background-image: url('img/watergardenweb.png');
+      background-size: cover;
+      background-position: center 20%;
+      background-repeat: no-repeat;
+      position: relative;
+      height:300px;
+;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 0;
+    }
+
+    .section-wrapper {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: white;
+      padding: 100px 20px 40px 20px;
+    }
+
+    .heading-line {
+      width: 100px;
+      height: 3px;
+      background-color: white;
+      opacity: 0.8;
+      margin: 10px auto 30px auto;
+    }
+
+    /* ========== COURSE TILE SECTION ========== */
+    .tile-grid {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .course-tile {
+      flex: 0 0 auto;
+      width: 300px;
+      min-height: 420px;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      padding: 30px;
+      color: white;
+      justify-content: space-between;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      overflow: hidden;
+      background-color: #444;
+    }
+
+    .course-tile::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+
+    .course-tile h2,
+    .course-tile .tile-line,
+    .course-tile .tile-description,
+    .course-tile .tile-footer {
+      position: relative;
+      z-index: 1;
+    }
+
+    .tile-line {
+      width: 80px;
+      height: 3px;
+      background-color: white;
+      opacity: 0.6;
+      margin: 10px auto 25px auto;
+    }
+
+    .tile-description {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 35px;
+    }
+
+    .tile-footer {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .arrow {
+      font-size: 1.6rem;
+    }
+
+    .smaller-heading {
+      font-size: 1.8rem;
+    }
+    .course-tile.child-minding{
+      background-image: url('img/childminding.png');
+    }
+
+    .course-tile.cooking {
+      background-image: url('img/cooking.png');
+    }
+
+    .course-tile.garden {
+      background-image: url('img/garden.png');
+    }
+  </style>
 </head>
 <body>
-  <div class="corner-icon">
-  <img src="img/logo_white.png" alt="Site Icon" />
-</div>
-
-
-
-<nav>
-  <div class="nav-wrapper">
-    <div class="nav-bar">
-      <a href="index.html">Home</a>
-      <a href="six_months.html">6 Months</a>
-      <a href="six_weeks.html">6 Weeks</a>
-      <a href="contact.html">Contact</a>
+  <nav>
+    <div class="nav-wrapper">
+      <div class="corner-icon">
+        <img src="img/logo_white.png" alt="Site Icon" />
+      </div>
+      <div class="nav-bar">
+        <a href="index.html">Home</a>
+        <a href="six_months.html">6 Months</a>
+        <a href="six_weeks.html">6 Weeks</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-search">
+        <input type="text" placeholder="Search..." />
+      </div>
     </div>
-    <div class="nav-search">
-      <input type="text" placeholder="Search..." />
+  </nav>
+
+  <header id="home">
+    <div class="header-background">
+      <div class="overlay"></div>
+      <div class="section-wrapper">
+        <h1 class="heading-main">Six Weeks Courses</h1>
+        <div class="heading-line"></div>
+      </div>
     </div>
-  </div>
-</nav>
-
-<header id="home">
-  <div class="overlay"></div>
-
-  <div class="section-wrapper">
-    <h1>Six Weeks courses</h1>
-    <div class="heading-line"></div>
 
     <div class="tile-grid">
-      <div class="course-tile">
+      <div class="course-tile child-minding">
         <h2>CHILD MINDING</h2>
         <div class="tile-line"></div>
         <p class="tile-description">
@@ -51,11 +265,11 @@
         </div>
       </div>
 
-      <div class="course-tile">
+      <div class="course-tile cooking">
         <h2>COOKING</h2>
         <div class="tile-line"></div>
         <p class="tile-description">
-          <strong>Purpose:</strong> prepare and cook nutritious family meals.
+          <strong>Purpose:</strong> To prepare and cook nutritious family meals.
         </p>
         <div class="tile-footer">
           <span>More details</span>
@@ -63,7 +277,7 @@
         </div>
       </div>
 
-      <div class="course-tile">
+      <div class="course-tile garden">
         <h2 class="smaller-heading">GARDEN MAINTENANCE</h2>
         <div class="tile-line"></div>
         <p class="tile-description">
@@ -75,8 +289,7 @@
         </div>
       </div>
     </div>
-  </div>
-</header>
+  </header>
+</body>
+</html>
 
-
-   </html> 
