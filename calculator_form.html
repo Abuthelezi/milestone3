@@ -15,62 +15,80 @@
       color: #000;
     }
 
-    .corner-icon {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      z-index: 10;
-    }
-
-    .corner-icon img {
-      width: 300px;
-      height: auto;
-    }
-
     nav {
       position: sticky;
       top: 0;
-      z-index: 2;
+      z-index: 100;
       background-color: transparent;
-      padding: 0;
+      padding: 10px 0;
     }
 
     .nav-wrapper {
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 100%;
-      margin: 0 auto;
       position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .corner-icon {
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      transform: translateY(-50%);
+      z-index: 10;
+    }
+
+    .corner-icon img {
+      width: 150px;
+      height: auto;
+      display: block;
     }
 
     .nav-bar {
       background-color: black;
       border-radius: 40px;
-      padding: 10px 30px;
+      padding: 6px 20px;
       display: flex;
       gap: 20px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      z-index: 2;
     }
 
     .nav-bar a {
       text-decoration: none;
       color: white;
       font-weight: 500;
+      font-size: 0.9rem;
+      padding: 4px 0;
+      caret-color: transparent;
+  outline: none;
+
+
     }
 
-    .nav-search {
-      position: absolute;
-      right: 40px;
-    }
+   .nav-search {
+  position: absolute;
+  right: 40px;
+  display: flex;
+  align-items: center;
+}
+
+
+
 
     .nav-search input {
-      padding: 8px 16px;
-      border-radius: 20px;
-      border: 1px solid #ccc;
-      font-size: 1rem;
-      outline: none;
-    }
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+  outline: none;
+  width: 180px; /* Set a fixed width */
+  z-index: 3;
+}
+
+
 
     .calculator-section {
       padding: 80px 40px;
@@ -137,7 +155,9 @@
 
     .form-group input[type="text"],
     .form-group input[type="email"],
-    .form-group input[type="number"] {
+    .form-group input[type="number"],
+    .form-group select,
+    .form-group textarea {
       padding: 10px;
       font-size: 1rem;
       border: 1px solid #ccc;
@@ -151,35 +171,32 @@
       gap: 10px;
     }
 
-    .checkbox-grid label {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
     .checkbox-item {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
 
-.price-tag {
-  font-weight: bold;
-  font-size: 1rem;
-  margin-top: 4px;
-  color: #333;
-}
+    .price-tag {
+      font-weight: bold;
+      font-size: 1rem;
+      margin-top: 4px;
+      color: #333;
+    }
 
-
-
-    .calculate-button {
+    .calculate-button,
+    .quote-button {
       padding: 12px 24px;
-      background-color: black;
-      color: white;
       font-size: 1rem;
       font-weight: 500;
       border: none;
       border-radius: 6px;
       cursor: pointer;
+    }
+
+    .calculate-button {
+      background-color: black;
+      color: white;
     }
 
     .calculate-button:hover {
@@ -187,29 +204,73 @@
     }
 
     .quote-button {
-      padding: 12px 24px;
       background-color: #007BFF;
       color: white;
-      font-size: 1rem;
-      font-weight: 500;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
       margin-top: 10px;
     }
 
     .quote-button:hover {
       background-color: #0056b3;
     }
+    button {
+  caret-color: transparent;
+  outline: none;
+}
+.search-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-box {
+  background-color: white;
+  color: black;
+  padding: 30px;
+  border-radius: 16px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.modal-box button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  transition: background-color 0.3s ease;
+}
+
+.modal-box button:hover {
+  background-color: #f2f2f2;
+}
+
+
+
   </style>
 </head>
 <body>
-  <div class="corner-icon">
-    <img src="img/logoBlack.png" alt="Black Logo" />
-  </div>
-
   <nav>
     <div class="nav-wrapper">
+      <div class="corner-icon">
+        <img src="img/logoBlack.png" alt="Black Logo" />
+      </div>
       <div class="nav-bar">
         <a href="index.html">Home</a>
         <a href="six_months.html">6 Months</a>
@@ -217,8 +278,9 @@
         <a href="contact.html">Contact</a>
       </div>
       <div class="nav-search">
-        <input type="text" placeholder="Search..." />
-      </div>
+  <img src="img/search.png" alt="Search" id="searchToggle" class="search-icon" />
+  <input type="text" placeholder="Search..." id="searchInput" style="display: none;" />
+</div>
     </div>
   </nav>
 
@@ -234,58 +296,55 @@
 
           <div class="form-title">Details</div>
 
-       <div class="form-group">
-  <label for="phone">Phone Number</label>
-  <input type="text" id="phone" />
-</div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="text" id="phone" />
+          </div>
 
-<div class="form-group">
-  <label for="email">Email Address</label>
-  <input type="email" id="email" />
-</div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" />
+          </div>
 
-<p>You can select more than one course:</p>
+          <p>You can select more than one course:</p>
 
-<div class="form-title">Six Month Course</div>
-<div class="form-group checkbox-grid">
-  <div class="checkbox-item">
-    <label><input type="checkbox" name="sixMonth" value="Course A" /> FIRST AID</label>
-    <div class="price-tag">R1500</div>
-  </div>
-  <div class="checkbox-item">
-    <label><input type="checkbox" name="sixMonth" value="Course B" />SEWING</label>
-    <div class="price-tag">R1500</div>
-  </div>
-  <div class="checkbox-item">
-    <label><input type="checkbox" name="sixMonth" value="Course C" />LANDSCAPING</label>
-    <div class="price-tag">R1500</div>
-  </div>
-  <div class="checkbox-item">
-    <label><input type="checkbox" name="sixMonth" value="Course D" />LIFE SKILLS</label>
-    <div class="price-tag">R1500</div>
-  </div>
-</div>
+          <div class="form-title">Six Month Course</div>
+          <div class="form-group checkbox-grid">
+            <div class="checkbox-item">
+              <label><input type="checkbox" name="sixMonth" value="1500" /> FIRST AID</label>
+              <div class="price-tag">R1500</div>
+            </div>
+            <div class="checkbox-item">
+              <label><input type="checkbox" name="sixMonth" value="1500" /> SEWING</label>
+              <div class="price-tag">R1500</div>
+            </div>
+            <div class="checkbox-item">
+              <label><input type="checkbox" name="sixMonth" value="1500" /> LANDSCAPING</label>
+              <div class="price-tag">R1500</div>
+            </div>
+            <div class="checkbox-item">
+              <label><input type="checkbox" name="sixMonth" value="1500" /> LIFE SKILLS</label>
+              <div class="price-tag">R1500</div>
+            </div>
+          </div>
 
-<div class="form-title">Six Weeks Course</div>
-<div class="form-group checkbox-grid">
-  <div class="checkbox-item">
-    <label><input type="checkbox" name="sixWeek" value="Course E" />CHILD MINIDNG</label>
-    <div class="price-tag">R750</div>
-  </div>
-  <div class="checkbox-item">
-    <label><input type="checkbox" name="sixWeek" value="Course F" />COOKING</label>
-    <div class="price-tag">R750</div>
-  </div>
-  <div class="checkbox-item">
-    <label><input type="checkbox" name="sixWeek" value="Course G" />GARDEN MAINTENANCE</label>
-    <div class="price-tag">R750</div>
-  </div>
- 
-</div>
-
- </div>
- </div>
-
+          <div class="form-title">Six Weeks Course</div>
+          <div class="form-group checkbox-grid">
+            <div class="checkbox-item">
+              <label><input type="checkbox" name="sixWeek" value="750" /> CHILD MINDING</label>
+              <div class="price-tag">R750</div>
+            </div>
+            <div class="checkbox-item">
+              <label><input type="checkbox" name="sixWeek" value="750" /> COOKING</label>
+              <div class="price-tag">R750</div>
+            </div>
+            <div class="checkbox-item">
+              <label><input type="checkbox" name="sixWeek" value="750" /> GARDEN MAINTENANCE</label>
+              <div class="price-tag">R750</div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- Column 2: Quote Calculation -->
       <div class="column">
@@ -299,73 +358,82 @@
 
           <div class="form-group">
             <label for="subtotal">Sub Total</label>
-            <input type="number" id="subtotal" />
+            <input type="text" id="subtotal" readonly />
           </div>
 
           <div class="form-group">
             <label for="discount">Discount</label>
-            <input type="number" id="discount" />
+            <input type="text" id="discount" readonly />
           </div>
-
           <div class="form-group">
             <label for="vat">VAT (15%)</label>
-            <input type="number" id="vat" />
+            <input type="text" id="vat" readonly />
           </div>
 
           <div class="form-group">
             <label for="totalQuote">Total Quote</label>
-            <input type="number" id="totalQuote" />
+            <input type="text" id="totalQuote" readonly />
           </div>
 
-          <button class="calculate-button">Apply</button>
+          <button class="calculate-button">Apply</button >
           <button class="quote-button">Get a Quote</button>
         </div>
       </div>
 
-      <!-- Column 3: -->
-       <div class="column">
-  <div class="form-block">
-    <div class="heading-block">
-      <span>3</span>
-      <div class="underline"></div>
-    </div>
+      <!-- Column 3: Contact Form -->
+      <div class="column">
+        <div class="form-block">
+          <div class="heading-block">
+            <span>3</span>
+            <div class="underline"></div>
+          </div>
 
-    <div class="form-title">Contact Form</div>
+          <div class="form-title">Contact Form</div>
 
-    <div class="form-group">
-      <label for="contactName">Name</label>
-      <input type="text" id="contactName" />
-    </div>
+          <div class="form-group">
+            <label for="contactName">Name</label>
+            <input type="text" id="contactName" />
+          </div>
 
-    <div class="form-group">
-      <label for="contactEmail">Email Address</label>
-      <input type="email" id="contactEmail" />
-    </div>
+          <div class="form-group">
+            <label for="contactEmail">Email Address</label>
+            <input type="email" id="contactEmail" />
+          </div>
 
-    <div class="form-group">
-      <label for="venue">Select a Venue</label>
-      <select id="venue">
-        <option value="">-- Choose a venue --</option>
-        <option value="sharpville">Sharpville</option>
-        <option value="soweto">Soweto</option>
-        <option value="alexandra">Alexandra</option>
-      </select>
-    </div>
+          <div class="form-group">
+            <label for="venue">Select a Venue</label>
+            <select id="venue">
+              <option value="">-- Please select an option --</option>
+              <option value="sharpville">Sharpville</option>
+              <option value="soweto">Soweto</option>
+              <option value="alexandra">Alexandra</option>
+            </select>
+          </div>
 
-    <div class="form-group">
-      <label for="message">Message</label>
-      <textarea id="message" rows="5"></textarea>
-    </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" rows="5"></textarea>
+          </div>
 
-    <button class="calculate-button">Submit</button>
+          <button class="calculate-button">Submit</button>
+        </div>
+      </div>
+    </div> <!-- End of .calculator-row -->
+  </section>
+
+ 
+<script src="scripts.js"></script>
+
+
+<div id="confirmationModal" class="modal-overlay" style="display: none;">
+  <div class="modal-box">
+    <p>Thank you for your message.<br>We will get back to your request at our earliest convenience.</p>
+    <button id="continueHome">Continue to Home</button>
   </div>
 </div>
- </div> <!-- End of .calculator-row -->
-  </section>
+
+
+
 </body>
 </html>
-
-
-
-
 

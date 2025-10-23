@@ -43,8 +43,7 @@
       width: 100%;
       background-color: transparent;
       padding: 10px 0;
-       box-shadow: none;
-       
+      box-shadow: none;
     }
 
     .nav-wrapper {
@@ -112,7 +111,6 @@
       justify-content: center;
       align-items: center;
     }
-    
 
     .overlay {
       background-color: rgba(0, 0, 0, 0.6);
@@ -147,11 +145,10 @@
     .tile-grid {
       display: flex;
       gap: 40px;
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
       justify-content: center;
       padding: 0 40px;
       min-width: max-content;
-      flex-wrap: wrap;
     }
 
     .course-tile {
@@ -212,11 +209,24 @@
       cursor: pointer;
     }
 
+    .tile-footer a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tile-footer a:hover {
+      text-decoration: underline;
+    }
+
     .arrow {
       font-size: 1.6rem;
     }
 
-    /* ========== TILE BACKGROUND IMAGES ========== */
+    
     .course-tile.first-aid {
       background-image: url('img/firstaid.png');
     }
@@ -232,16 +242,24 @@
     .course-tile.life-skills {
       background-image: url('img/lifeskills.png');
     }
-    .intro-image {
-  text-align: center;
-  margin: 40px auto;
-}
 
-.intro-image img {
-  max-width: 90%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    .intro-image {
+      text-align: center;
+      margin: 40px auto;
+    }
+
+    .intro-image img {
+      max-width: 90%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    
+.search-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  margin-right: 10px;
 }
 
 
@@ -260,8 +278,9 @@
         <a href="contact.html">Contact</a>
       </div>
       <div class="nav-search">
-        <input type="text" placeholder="Search..." />
-      </div>
+  <img src="img/searchw.png" alt="Search" id="searchToggle" class="search-icon" />
+  <input type="text" placeholder="Search..." id="searchInput" style="display: none;" />
+</div>
     </div>
   </nav>
 
@@ -273,6 +292,7 @@
         <div class="heading-line"></div>
       </div>
     </div>
+
     <div class="scroll-container">
       <div class="tile-grid">
         <div class="course-tile first-aid">
@@ -282,8 +302,10 @@
             <strong>Purpose:</strong> To provide first aid awareness and basic life support.
           </p>
           <div class="tile-footer">
-            <span>More details</span>
-            <span class="arrow">→</span>
+            <a href="months_more.html">
+              <span>More details</span>
+              <span class="arrow">→</span>
+            </a>
           </div>
         </div>
 
@@ -294,8 +316,10 @@
             <strong>Purpose:</strong> To provide alterations and new garment tailoring services.
           </p>
           <div class="tile-footer">
-            <span>More details</span>
-            <span class="arrow">→</span>
+            <a href="months_more.html">
+              <span>More details</span>
+              <span class="arrow">→</span>
+            </a>
           </div>
         </div>
 
@@ -306,8 +330,10 @@
             <strong>Purpose:</strong> To provide landscaping services for new and established gardens.
           </p>
           <div class="tile-footer">
-            <span>More details</span>
-            <span class="arrow">→</span>
+            <a href="months_more.html">
+              <span>More details</span>
+              <span class="arrow">→</span>
+            </a>
           </div>
         </div>
 
@@ -317,15 +343,17 @@
           <p class="tile-description">
             <strong>Purpose:</strong> To provide skills to navigate basic necessities.
           </p>
-           <div class="tile-footer">
-            <span>More details</span>
-            <span class="arrow">→</span>
+          <div class="tile-footer">
+            <a href="months_more.html">
+              <span>More details</span>
+              <span class="arrow">→</span>
+            </a>
           </div>
-          </div>
-           </div> <!-- End of life-skills tile -->
-      </div> <!-- End of tile-grid -->
-    </div> <!-- End of scroll-container -->
+        </div>
+      </div> 
+    </div> 
   </header>
+  <script src="scripts.js"></script>
 </body>
 </html>
 

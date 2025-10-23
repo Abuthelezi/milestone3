@@ -15,48 +15,53 @@
       color: #000;
     }
 
-    .corner-icon {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      z-index: 10;
-    }
-
-    .corner-icon img {
-      width: 300px;
-      height: auto;
-    }
-
     nav {
       position: sticky;
       top: 0;
-      z-index: 2;
+      z-index: 100;
       background-color: transparent;
-      padding: 0;
+      padding: 10px 0;
     }
 
     .nav-wrapper {
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 100%;
-      margin: 0 auto;
       position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .corner-icon {
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      transform: translateY(-50%);
+      z-index: 10;
+    }
+
+    .corner-icon img {
+      width: 150px;
+      height: auto;
+      display: block;
     }
 
     .nav-bar {
       background-color: black;
       border-radius: 40px;
-      padding: 10px 30px;
+      padding: 6px 20px;
       display: flex;
       gap: 20px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      z-index: 2;
     }
 
     .nav-bar a {
       text-decoration: none;
       color: white;
       font-weight: 500;
+      font-size: 0.9rem;
+      padding: 4px 0;
     }
 
     .nav-search {
@@ -65,10 +70,10 @@
     }
 
     .nav-search input {
-      padding: 8px 16px;
+      padding: 6px 12px;
       border-radius: 20px;
       border: 1px solid #ccc;
-      font-size: 1rem;
+      font-size: 0.9rem;
       outline: none;
     }
 
@@ -112,7 +117,7 @@
     }
 
     .heading-block span {
-      font-size: 3rem;
+      font-size: 2.5rem;
       font-weight: bold;
     }
 
@@ -125,23 +130,21 @@
 
     .program-title {
       font-weight: bold;
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       margin-top: 8px;
       margin-bottom: 8px;
     }
 
     .bullet-list {
-  list-style-type: disc;
-  padding-left: 20px;
-  margin:0;
-  min-height: 160px; /* Adjust as needed */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-bottom: 8px;
-}
-
-
+      list-style-type: disc;
+      padding-left: 20px;
+      margin: 0;
+      min-height: 160px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
 
     .program-tile {
       position: relative;
@@ -167,6 +170,7 @@
       flex-direction: column;
       justify-content: center;
       position: relative;
+      gap: 12px;
     }
 
     .apply-button {
@@ -189,15 +193,23 @@
       font-size: 1.2rem;
       color: white;
     }
+    .search-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+
+
   </style>
 </head>
 <body>
-  <div class="corner-icon">
-    <img src="img/logoBlack.png" alt="Black Logo" />
-  </div>
-
   <nav>
     <div class="nav-wrapper">
+      <div class="corner-icon">
+        <img src="img/logoBlack.png" alt="Black Logo" />
+      </div>
       <div class="nav-bar">
         <a href="index.html">Home</a>
         <a href="six_months.html">6 Months</a>
@@ -205,8 +217,11 @@
         <a href="contact.html">Contact</a>
       </div>
       <div class="nav-search">
-        <input type="text" placeholder="Search..." />
-      </div>
+  <img src="img/search.png" alt="Search" id="searchToggle" class="search-icon" />
+  <input type="text" placeholder="Search..." id="searchInput" style="display: none;" />
+</div>
+
+
     </div>
   </nav>
 
@@ -228,9 +243,9 @@
               <li>Education toys</li>
             </ul>
           </div>
-          <div class="program-tile" style="background-image: url('img/child-minding.jpg');">
+          <div class="program-tile" style="background-image: url('img/childminding.png');">
             <div class="tile-overlay">
-              <a href="#apply-child" class="apply-button">Apply</a>
+              <a href="calculator_form.html" class="apply-button">Apply</a>
               <div class="price-tag">R500</div>
             </div>
           </div>
@@ -254,17 +269,15 @@
               <li>Preparation and cooking of meals</li>
             </ul>
           </div>
-          <div class="program-tile" style="background-image: url('img/youth-mentorship.jpg');">
+          <div class="program-tile" style="background-image: url('img/cooking.png');">
             <div class="tile-overlay">
-              <a href="#apply-youth" class="apply-button">Apply</a>
+              <a href="calculator_form.html" class="apply-button">Apply</a>
               <div class="price-tag">R750</div>
             </div>
           </div>
         </div>
       </div>
-
-      <!-- Column 3 -->
-      <div class="column">
+<div class="column">
         <div class="program-block">
           <div class="heading-block">
             <span>3</span>
@@ -278,9 +291,9 @@
               <li>Planting techniques for different plant types</li>
             </ul>
           </div>
-          <div class="program-tile" style="background-image: url('img/skills-development.jpg');">
+          <div class="program-tile" style="background-image: url('img/garden.png');">
             <div class="tile-overlay">
-              <a href="#apply-skills" class="apply-button">Apply</a>
+              <a href="calculator_form.html" class="apply-button">Apply</a>
               <div class="price-tag">R900</div>
             </div>
           </div>
@@ -288,6 +301,9 @@
       </div>
     </div>
   </section>
+  <script src="scripts.js"></script>
+
+
+
 </body>
 </html>
-

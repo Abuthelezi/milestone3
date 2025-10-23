@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+ 
+
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Empowering the Nation</title>
 
-  <style>
-    /* ========== GLOBAL RESET ========== */
+<style>
+  
+   
     *, *::before, *::after {
       box-sizing: border-box;
     }
@@ -14,22 +18,32 @@
     html, body {
       margin: 0;
       padding: 0;
-      scroll-behavior: smooth;
       font-family: Arial, sans-serif;
-      font-size: 16px;
-      line-height: 1.6;
-      background-color: black;
+      background-color: #ccc;
       color: white;
-      overflow: hidden; /* ✅ Prevent scroll */
+      overflow-x: hidden;
     }
 
-    /* ========== NAVIGATION ========== */
+    h1, h2 {
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .heading-main {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+  
     nav {
-      position: sticky;
+      position: absolute;
       top: 0;
+      left: 0;
       z-index: 100;
-      background-color: black;
-      padding: 20px 0;
+      width: 100%;
+      background-color: transparent;
+      padding: 10px 0;
+      box-shadow: none;
     }
 
     .nav-wrapper {
@@ -37,21 +51,22 @@
       justify-content: center;
       align-items: center;
       position: relative;
-      width: 100%;
       max-width: 1200px;
       margin: 0 auto;
     }
 
     .corner-icon {
       position: absolute;
-      top: 0;
-      left: 0;
-      padding-left: 20px;
+      top: 50%;
+      left: 20px;
+      transform: translateY(-50%);
+      z-index: 10;
     }
 
     .corner-icon img {
       width: 150px;
       height: auto;
+      display: block;
     }
 
     .nav-bar {
@@ -84,27 +99,24 @@
       outline: none;
     }
 
-    /* ========== HEADER ========== */
-    header {
-      background-image: url('img/bannerWeb.png');
+   
+    .header-background {
+      background-image: url('img/bannerWeb.png'); 
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      background-attachment: fixed;
-      height: calc(100vh - 80px); /* ✅ Adjust for nav height */
       position: relative;
+      height: 100vh; 
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
     }
 
     .overlay {
       background-color: rgba(0, 0, 0, 0.6);
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      top: 0; left: 0; right: 0; bottom: 0;
       z-index: 0;
     }
 
@@ -112,7 +124,7 @@
       position: relative;
       z-index: 1;
       text-align: center;
-      padding: 40px 20px 20px;
+      padding: 40px 20px;
       max-width: 600px;
     }
 
@@ -148,7 +160,17 @@
     button:hover {
       background-color: #f0f0f0;
     }
-  </style>
+    .search-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+
+</style>
+
+
 </head>
 
 <body>
@@ -164,24 +186,30 @@
         <a href="contact.html">Contact</a>
       </div>
       <div class="nav-search">
-        <input type="text" placeholder="Search..." />
-      </div>
+  <img src="img/searchw.png" alt="Search" id="searchToggle" class="search-icon" />
+  <input type="text" placeholder="Search..." id="searchInput" style="display: none;" />
+</div>
     </div>
   </nav>
 
   <header id="home">
-    <div class="overlay"></div>
-    <div class="hero-text">
-      <h1>Empowering the Nation</h1>
-      <div class="heading-line"></div>
-      <p>
-        Empowering the Nation was established in 2022 and offers courses in Johannesburg.
-        Hundreds of domestic workers and gardeners have been trained on both the six-months long learnerships
-        and six-weeks short skills Training Programs to empower themselves and provide more marketable skills.
-      </p>
-      <button>Get Started</button>
+    <div class="header-background">
+      <div class="overlay"></div>
+      <div class="hero-text">
+        <h1>Empowering the Nation</h1>
+        <div class="heading-line"></div>
+        <p>
+          Empowering the Nation was established in 2022 and offers courses in Johannesburg.
+          Hundreds of domestic workers and gardeners have been trained on both the six-months long learnerships
+          and six-weeks short skills Training Programs to empower themselves and provide more marketable skills.
+        </p>
+        <a href="six_months.html">
+  <button>Get Started</button>
+</a>
+      </div>
     </div>
   </header>
+ <script src="scripts.js"></script>
 </body>
 </html>
 

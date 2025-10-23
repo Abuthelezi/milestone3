@@ -5,58 +5,73 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Empowering the Nation – Contact</title>
   <style>
-    body {
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html, body {
       margin: 0;
       padding: 0;
-      font-family: sans-serif;
+      font-family: Arial, sans-serif;
       font-size: 20px;
       line-height: 1.7;
       background-color: #fff;
       color: #000;
+      overflow-x: hidden;
     }
 
-    .corner-icon {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      z-index: 10;
-    }
-
-    .corner-icon img {
-      width: 300px;
-      height: auto;
-    }
-
+ 
     nav {
-      position: sticky;
+      position: absolute;
       top: 0;
-      z-index: 2;
+      left: 0;
+      z-index: 100;
+      width: 100%;
       background-color: transparent;
-      padding: 0;
+      padding: 8px 0;
+      box-shadow: none;
     }
 
     .nav-wrapper {
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 100%;
-      margin: 0 auto;
       position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .corner-icon {
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      transform: translateY(-50%);
+      z-index: 10;
+    }
+
+    .corner-icon img {
+      width: 150px;
+      height: auto;
+      display: block;
     }
 
     .nav-bar {
       background-color: black;
       border-radius: 40px;
-      padding: 10px 30px;
+      padding: 6px 20px;
       display: flex;
-      gap: 20px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      gap: 16px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      z-index: 2;
     }
 
     .nav-bar a {
       text-decoration: none;
       color: white;
       font-weight: 500;
+      font-size: 0.85rem;
+      padding: 4px 0;
     }
 
     .nav-search {
@@ -65,15 +80,16 @@
     }
 
     .nav-search input {
-      padding: 8px 16px;
+      padding: 6px 12px;
       border-radius: 20px;
       border: 1px solid #ccc;
-      font-size: 1rem;
+      font-size: 0.85rem;
       outline: none;
     }
 
+    
     .contact-section {
-      padding: 80px 40px;
+      padding: 120px 40px 80px;
       max-width: 1000px;
       margin: 0 auto;
     }
@@ -83,6 +99,7 @@
       justify-content: space-between;
       align-items: flex-start;
       gap: 40px;
+      flex-wrap: wrap;
     }
 
     .left-column,
@@ -91,6 +108,7 @@
       flex-direction: column;
       gap: 20px;
       font-size: 1.4rem;
+      flex: 1 1 400px;
     }
 
     .heading-block {
@@ -151,10 +169,10 @@
 
     .contact-button {
       display: inline-block;
-      padding: 14px 28px;
+      padding: 12px 24px;
       background-color: black;
       color: white;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       font-weight: 500;
       text-decoration: none;
       border-radius: 8px;
@@ -188,24 +206,36 @@
       height: 100%;
       border: none;
     }
+    .search-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+
+
+
   </style>
+
+
+
 </head>
 <body>
-  <div class="corner-icon">
-    <img src="img/logoBlack.png" alt="Black Logo" />
-  </div>
-
   <nav>
     <div class="nav-wrapper">
+      <div class="corner-icon">
+        <img src="img/logoBlack.png" alt="Black Logo" />
+      </div>
       <div class="nav-bar">
         <a href="index.html">Home</a>
         <a href="six_months.html">6 Months</a>
         <a href="six_weeks.html">6 Weeks</a>
         <a href="contact.html">Contact</a>
       </div>
-      <div class="nav-search">
-        <input type="text" placeholder="Search..." />
-      </div>
+       <div class="nav-search">
+  <img src="img/search.png" alt="Search" id="searchToggle" class="search-icon" />
+  <input type="text" placeholder="Search..." id="searchInput" style="display: none;" />
     </div>
   </nav>
 
@@ -217,10 +247,12 @@
           <div class="underline"></div>
         </div>
 
-        <div class="contact-item">
-          <img src="img/phone-call.png" alt="Phone Icon" />
-          <span>+27 73 456 7891</span>
-        </div>
+       <div class="contact-item">
+  <img src="img/phone-call.png" alt="Phone Icon" />
+  <a href="#" id="contactNumber" class="phone-link">+27 73 456 7891</a>
+</div>
+
+
 
         <div class="contact-item">
           <img src="img/location.png" alt="Location Icon" />
@@ -228,10 +260,10 @@
         </div>
 
         <div class="social-icons">
-          <a href="#"><img src="img/facebook.png" alt="Facebook" /></a>
-          <a href="#"><img src="img/twitter.png" alt="X (Twitter)" /></a>
-          <a href="#"><img src="img/instagram.png" alt="Instagram" /></a>
-          <a href="#"><img src="img/linkedin.png" alt="LinkedIn" /></a>
+          <a href="https://facebook.com"><img src="img/facebook.png" alt="Facebook" /></a>
+          <a href="https://twitter.com"><img src="img/twitter.png" alt="X (Twitter)" /></a>
+          <a href="https://instagram.com"><img src="img/instagram.png" alt="Instagram" /></a>
+          <a href="https://linkedin.com"><img src="img/linkedin.png" alt="LinkedIn" /></a>
         </div>
       </div>
 
@@ -247,7 +279,8 @@
         </div>
 
         <div class="form-button-wrapper">
-          <a href="#contact-form" class="contact-button">Fill out our contact form</a>
+          
+          <a href="calculator_form.html" class="contact-button">Fill out our contact form</a>
           <a href="#credentials" class="contact-button">View Institution credentials</a>
         </div>
       </div>
@@ -264,5 +297,18 @@
       </div>
     </div>
   </section>
+  <script src="scripts.js"></script>
+<div id="contactModal" class="modal-overlay" style="display: none;">
+  <div class="modal-box">
+    <p>Would you like to get in contact with Empowering the Nation?</p>
+    <div class="modal-buttons">
+      <button id="modalYes">Yes</button>
+      <button id="modalNo">No</button>
+    </div>
+  </div>
+</div>
+
+
+
 </body>
 </html>

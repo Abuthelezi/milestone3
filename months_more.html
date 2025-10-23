@@ -15,48 +15,53 @@
       color: #000;
     }
 
-    .corner-icon {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      z-index: 10;
-    }
-
-    .corner-icon img {
-      width: 300px;
-      height: auto;
-    }
-
     nav {
       position: sticky;
       top: 0;
-      z-index: 2;
+      z-index: 100;
       background-color: transparent;
-      padding: 0;
+      padding: 10px 0;
     }
 
     .nav-wrapper {
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 100%;
-      margin: 0 auto;
       position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .corner-icon {
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      transform: translateY(-50%);
+      z-index: 10;
+    }
+
+    .corner-icon img {
+      width: 150px;
+      height: auto;
+      display: block;
     }
 
     .nav-bar {
       background-color: black;
       border-radius: 40px;
-      padding: 10px 30px;
+      padding: 6px 20px;
       display: flex;
       gap: 20px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      z-index: 2;
     }
 
     .nav-bar a {
       text-decoration: none;
       color: white;
       font-weight: 500;
+      font-size: 0.9rem;
+      padding: 4px 0;
     }
 
     .nav-search {
@@ -65,10 +70,10 @@
     }
 
     .nav-search input {
-      padding: 8px 16px;
+      padding: 6px 12px;
       border-radius: 20px;
       border: 1px solid #ccc;
-      font-size: 1rem;
+      font-size: 0.9rem;
       outline: none;
     }
 
@@ -78,22 +83,25 @@
       margin: 0 auto;
     }
 
+    .program-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      align-items: start;
+    }
 
     .column {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      text-align: left;
+      height: 100%;
     }
 
     .program-block {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-}
-
-
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
 
     .heading-block {
       display: flex;
@@ -122,13 +130,27 @@
 
     .bullet-list {
       flex-grow: 1;
-      display: flex;  
+      display: flex;
       list-style-type: disc;
       padding-left: 20px;
       margin: 0;
       flex-direction: column;
       justify-content: flex-start;
+    }
 
+    .bullet-list li {
+      margin-bottom: 8px;
+    }
+
+    .program-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .spacer {
+      flex-grow: 1;
     }
 
     .program-tile {
@@ -155,6 +177,7 @@
       flex-direction: column;
       justify-content: center;
       position: relative;
+      gap: 12px;
     }
 
     .apply-button {
@@ -177,53 +200,33 @@
       font-size: 1.2rem;
       color: white;
     }
-.program-row {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
-  align-items: start; 
+    
+.search-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  margin-right: 10px;
 }
-
-.column {
-  display: flex;
-  flex-direction: column;
-  height: 100%; 
-}
-
-.spacer {
-  flex-grow: 1;
-}
-.bullet-list li {
-  margin-bottom: 8px;
-}
-.program-content {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-
-
 
   </style>
 </head>
 <body>
-  <div class="corner-icon">
-    <img src="img/logoBlack.png" alt="Black Logo" />
-  </div>
-
   <nav>
     <div class="nav-wrapper">
+      <div class="corner-icon">
+        <img src="img/logoBlack.png" alt="Black Logo" />
+      </div>
       <div class="nav-bar">
         <a href="index.html">Home</a>
         <a href="six_months.html">6 Months</a>
         <a href="six_weeks.html">6 Weeks</a>
         <a href="contact.html">Contact</a>
       </div>
-      <div class="nav-search">
-        <input type="text" placeholder="Search..." />
-      </div>
+     <div class="nav-search">
+  <img src="img/search.png" alt="Search" id="searchToggle" class="search-icon" />
+  <input type="text" placeholder="Search..." id="searchInput" style="display: none;" />
+</div>
+
     </div>
   </nav>
 
@@ -232,28 +235,24 @@
       <!-- Column 1 -->
       <div class="column">
         <div class="program-block">
-
           <div class="heading-block">
             <span>1</span>
             <div class="underline"></div>
           </div>
           <div class="program-content">
-            
-          <div class="program-title">FIRST AID</div>
-          <ul class="bullet-list">
-            <li>Wounds and bleeding</li>
-            <li>Burns and fractures</li>
-            <li>Emergency scene </li>
-            <li>Cardio-Pulmonary Resuscitation (CPR)</li>
-            <li>Respiratory distress e.g., Choking, blocked airway</li>                                   
-          </ul>
+            <div class="program-title">FIRST AID</div>
+            <ul class="bullet-list">
+              <li>Wounds and bleeding</li>
+              <li>Burns and fractures</li>
+              <li>Emergency scene</li>
+              <li>Cardio-Pulmonary Resuscitation (CPR)</li>
+              <li>Respiratory distress e.g., Choking, blocked airway</li>
+            </ul>
           </div>
           <div class="spacer"></div>
-
-
-          <div class="program-tile" style="background-image: url('img/child-minding.jpg');">
+          <div class="program-tile" style="background-image: url('img/firstaid.png');">
             <div class="tile-overlay">
-              <a href="#apply-child" class="apply-button">Apply</a>
+              <a href="calculator_form.html" class="apply-button">Apply</a>
               <div class="price-tag">R500</div>
             </div>
           </div>
@@ -268,18 +267,18 @@
             <div class="underline"></div>
           </div>
           <div class="program-content">
-          <div class="program-title">SEWING</div>
-          <ul class="bullet-list">
-            <li>Type of stitches</li>
-            <li>Threading a sewing machine</li>
-            <li>Sewing buttons, Zips, hems and seams</li>
-            <li>Alterations</li>
-            <li>Designing and sewing new garments</li>
-          </ul>
+            <div class="program-title">SEWING</div>
+            <ul class="bullet-list">
+              <li>Type of stitches</li>
+              <li>Threading a sewing machine</li>
+              <li>Sewing buttons, Zips, hems and seams</li>
+              <li>Alterations</li>
+              <li>Designing and sewing new garments</li>
+            </ul>
           </div>
-          <div class="program-tile" style="background-image: url('img/youth-mentorship.jpg');">
+          <div class="program-tile" style="background-image: url('img/sewing.png');">
             <div class="tile-overlay">
-              <a href="#apply-youth" class="apply-button">Apply</a>
+              <a href="calculator_form.html" class="apply-button">Apply</a>
               <div class="price-tag">R750</div>
             </div>
           </div>
@@ -294,18 +293,18 @@
             <div class="underline"></div>
           </div>
           <div class="program-content">
-          <div class="program-title">LANDSCAPING</div>
-          <ul class="bullet-list">
-            <li>indigenous and exotic plants and trees</li>
-            <li>Fixed structures(fountains, statues, benches, tables, built-in braai)</li>
-            <li>Balancing of plants and trees in a garden</li>
-            <li>Aethetics of plants shapes and colours</li>
-            <li>Garden layout</li>
-          </ul>
+            <div class="program-title">LANDSCAPING</div>
+            <ul class="bullet-list">
+              <li>Indigenous and exotic plants and trees</li>
+              <li>Fixed structures (fountains, statues, benches, tables, built-in braais)</li>
+              <li>Balancing of plants and trees in a garden</li>
+              <li>Aesthetics of plant shapes and colours</li>
+              <li>Garden layout</li>
+            </ul>
           </div>
-          <div class="program-tile" style="background-image: url('img/skills-development.jpg');">
+          <div class="program-tile" style="background-image: url('img/landscaping.png');">
             <div class="tile-overlay">
-              <a href="#apply-skills" class="apply-button">Apply</a>
+              <a href="calculator_form.html" class="apply-button">Apply</a>
               <div class="price-tag">R900</div>
             </div>
           </div>
@@ -320,23 +319,26 @@
             <div class="underline"></div>
           </div>
           <div class="program-content">
-          <div class="program-title">LIFE SKILLS</div>
-          <ul class="bullet-list">
-            <li>Opening a bank account</li>
-            <li>Basic labour law (know your rights)</li>
-            <li>Basic reading and writing literacy</li>
-            <li>Basic numeric literacy</li>
-          </ul>
+            <div class="program-title">LIFE SKILLS</div>
+            <ul class="bullet-list">
+              <li>Opening a bank account</li>
+              <li>Basic labour law (know your rights)</li>
+              <li>Basic reading and writing literacy</li>
+              <li>Basic numeric literacy</li>
+            </ul>
           </div>
-          <div class="program-tile" style="background-image: url('img/community-outreach.jpg');">
+          <div class="program-tile" style="background-image: url('img/lifeskills.png');">
             <div class="tile-overlay">
-              <a href="#apply-outreach" class="apply-button">Apply</a>
+              <a href="calculator_form.html" class="apply-button">Apply</a>
               <div class="price-tag">R600</div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </div> 
   </section>
+ <script src="scripts.js"></script>
+
+
 </body>
 </html>

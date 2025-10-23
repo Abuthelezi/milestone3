@@ -106,8 +106,7 @@
       background-position: center 20%;
       background-repeat: no-repeat;
       position: relative;
-      height:300px;
-;
+      height: 300px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -203,6 +202,12 @@
       font-size: 1.2rem;
       font-weight: 600;
       cursor: pointer;
+      text-decoration: none;
+      color: white;
+    }
+
+    .tile-footer:hover {
+      text-decoration: underline;
     }
 
     .arrow {
@@ -212,7 +217,8 @@
     .smaller-heading {
       font-size: 1.8rem;
     }
-    .course-tile.child-minding{
+
+    .course-tile.child-minding {
       background-image: url('img/childminding.png');
     }
 
@@ -223,6 +229,15 @@
     .course-tile.garden {
       background-image: url('img/garden.png');
     }
+    
+.search-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+
   </style>
 </head>
 <body>
@@ -238,8 +253,9 @@
         <a href="contact.html">Contact</a>
       </div>
       <div class="nav-search">
-        <input type="text" placeholder="Search..." />
-      </div>
+  <img src="img/searchw.png" alt="Search" id="searchToggle" class="search-icon" />
+  <input type="text" placeholder="Search..." id="searchInput" style="display: none;" />
+</div>
     </div>
   </nav>
 
@@ -259,10 +275,10 @@
         <p class="tile-description">
           <strong>Purpose:</strong> To provide basic child and baby care.
         </p>
-        <div class="tile-footer">
+        <a href="weeks_more.html" class="tile-footer">
           <span>More details</span>
           <span class="arrow">→</span>
-        </div>
+        </a>
       </div>
 
       <div class="course-tile cooking">
@@ -271,10 +287,10 @@
         <p class="tile-description">
           <strong>Purpose:</strong> To prepare and cook nutritious family meals.
         </p>
-        <div class="tile-footer">
+        <a href="weeks_more.html" class="tile-footer">
           <span>More details</span>
           <span class="arrow">→</span>
-        </div>
+        </a>
       </div>
 
       <div class="course-tile garden">
@@ -283,13 +299,15 @@
         <p class="tile-description">
           <strong>Purpose:</strong> To provide basic knowledge of watering, pruning and planting in a domestic garden.
         </p>
-        <div class="tile-footer">
+        <a href="weeks_more.html" class="tile-footer">
           <span>More details</span>
           <span class="arrow">→</span>
-        </div>
+        </a>
       </div>
     </div>
   </header>
+  <script src="scripts.js"></script>
+
+
 </body>
 </html>
-
